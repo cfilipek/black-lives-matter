@@ -1,0 +1,97 @@
+body {
+  background: black;
+  font-family: 'Varela', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.glitch-container {
+  margin-top: 80px;
+}
+
+.glitch {
+  color: white;
+  font-size: 100px;
+  position: relative;
+  width: 400px;
+  margin: 0 auto;
+  &--small {
+    font-size: 30px;
+    margin-top: 40px;
+  }
+}
+
+@keyframes noise-anim {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      clip-path: inset(#{$top}% 0 #{$bottom}% 0);
+    }
+  }
+}
+
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -1px 0 red;
+  top: 0;
+  color: white;
+  background: black;
+  overflow: hidden;
+  animation: noise-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      clip-path: inset(#{$top}% 0 #{$bottom}% 0);
+    }
+  }
+}
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: 1px 0 blue;
+  top: 0;
+  color: white;
+  background: black;
+  overflow: hidden;
+  animation: noise-anim-2 15s infinite linear alternate-reverse;
+}
+
+.thin-shade {
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.35rem;
+  color: #fff;
+  text-shadow: -4px 4px 0 #595959, -6px 6px 0 rgba(255, 255, 255, 0.5);
+  position: relative;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.shade-text {
+  margin-top: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .glitch {
+    font-size: 60px;
+    width: 300px;
+
+    &--small {
+      font-size: 20px;
+    }
+  }
+  .thin-shade {
+    font-size: 15px;
+    width: 300px;
+  }
+}

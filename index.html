@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Black Lives Matter</title>
+    <link href="./styles.css" rel="stylesheet"/>
+
+    <!-- <link rel="stylesheet/scss" type="text/css" href="styles.scss" /> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/sass.js/0.6.3/sass.min.js"></script>
+    <script>
+      (async () => {
+        const compiled = (
+          await Promise.all(
+            [...document.querySelectorAll('link')]
+              .filter(l => l.rel === 'stylesheet/scss')
+              .map(async l => {
+                url = l.href;
+                const code = await (await fetch(url)).text();
+                const basename = url.substring(url.lastIndexOf('/') + 1);
+                Sass.writeFile(basename, code);
+                return Sass.compile(`@import "${basename}"; `);
+              })
+          )
+        ).join('\n');
+        document.head.innerHTML += `<style>${compiled}</style>`;
+        console.log(compiled);
+      })();
+    </script>
+  </head> -->
+  <body style="background-color: black;">
+    <div class="container">
+      <div class="glitch-container">
+        <div class="glitch" data-text="BLACK">BLACK</div>
+        <div class="glitch" data-text="LIVES">LIVES</div>
+        <div class="glitch" data-text="MATTER">MATTER</div>
+      </div>
+      <section class="thin-shade">
+        <div class="shade-text">
+          When you say <br />
+          in response <br />
+          "all lives matter" <br />
+          you are missing <br />
+          the point.
+        </div>
+      </section>
+      <div>
+        <div class="glitch glitch--small" data-text="want to learn why?">
+          <a
+            href="https://www.vox.com/2016/7/11/12136140/black-all-lives-matter"
+            target="_blank"
+            >want to learn why</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
